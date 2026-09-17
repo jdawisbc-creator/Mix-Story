@@ -1,0 +1,6 @@
+{
+  "name": "MIX GESTÃO",
+  "description": "Sistema de Gestão — Mix Variedades Store. Gestão de caixa, vendas, estoque, gastos, ordens de serviço, promoções, conteúdo e redes sociais, e relatórios.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

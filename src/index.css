@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Bebas Neue', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #0D0D0D;
+    color: #FFFFFF;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Diagonal subtle brand watermark/pattern */
+.bg-mix-pattern {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(123, 44, 246, 0.02) 0px,
+    rgba(123, 44, 246, 0.02) 2px,
+    transparent 2px,
+    transparent 16px
+  );
+}
+
+.bg-mix-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A32;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7B2CF6;
+}
+
+/* Regras de Impressão Oficial A4 da Ordem de Serviço */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 4mm;
+  }
+
+  body {
+    background-color: #0b0713 !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Oculta menus, navegação, botões do sistema e cabeçalhos */
+  aside,
+  header,
+  nav,
+  .no-print,
+  button,
+  .toast-container,
+  [data-no-print="true"] {
+    display: none !important;
+  }
+
+  /* Exibe a folha da Ordem de Serviço e Relatórios Timbrados */
+  .printable-os-sheet,
+  .printable-report-sheet {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Evita quebras de página no meio das tabelas e blocos */
+  .modelo-oficial-os,
+  .printable-report-sheet table {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    border-radius: 0 !important;
+  }
+}
+
+
